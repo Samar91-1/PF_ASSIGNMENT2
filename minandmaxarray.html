@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        input[type=text] {
+          width: 50%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+          border: 2px solid black;
+          border-radius: 4px;
+        }
+        </style>
+</head>
+<body>
+ <form>
+      <label for="num">ENTER NUMBER</label>
+      <input type="text" id="num" name="num"><br>
+       <button onclick=" return minMax()" >SUBMIT</button><br>
+       <label for="minnum">MIN value</label>
+      <input type="text" id="minnum" name="minnum"><br>
+      <label for="maxnum">MAX value</label>
+      <input type="text" id="maxnum" name="maxnum"><br>
+    </form>
+    
+    </body>
+<script>
+let minMax = () =>
+{
+    var str = document.getElementById('num').value;
+    var arr = [];
+    arr = str.split("");
+    arr.sort(function(a, b){return a-b});
+document.getElementById('minnum').value = arr[0];
+document.getElementById('maxnum').value = arr[arr.length-1];
+return false;
+}
+</script>
+</html>
